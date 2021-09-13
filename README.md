@@ -1,1 +1,0 @@
-# minitalk_42Seoul

@@ -1,57 +1,38 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: pceccoli <pceccoli@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/09 15:40:17 by pceccoli          #+#    #+#              #
-#    Updated: 2021/06/14 14:37:06 by pceccoli         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+SERVER=server
+CLIENT=client
 
-SERVER   = server
+all: server client
 
-CLIENT   = client
+server:
+	gcc server.c utils.c -o $(SERVER)
 
-SERVER_BONUS = server_bonus
+client:
+	gcc client.c utils.c -o $(CLIENT)
 
-CLIENT_BONUS = client_bonus
-
-CC	     = gcc $(FLAGS)
-
-FLAGS    = -Wall -Werror -Wextra
-
-SERVER_SRC = src/server.c src/utils.c src/utils2.c src/stringhe.c 
-
-CLIENT_SRC = src/client.c src/stringhe.c src/utils.c src/utils2.c
-
-SERVER_BONUS_SRC = bonus/server_bonus.c bonus/stringhe_bonus.c bonus/utils_bonus.c bonus/utils2_bonus.c
-
-CLIENT_BONUS_SRC = bonus/client_bonus.c bonus/stringhe_bonus.c bonus/utils_bonus.c bonus/utils2_bonus.c
-
-SERVER_BONUS_OBJ = $(SERVER_BONUS_SRC:.c=.o)
-
-CLIENT_BONUS_OBJ = $(CLIENT_BONUS_SRC:.c=.o)
-
-SERVER_SRC_OBJ	= $(SERVER_SRC:.c=.o)
-
-CLIENT_SRC_OBJ	= $(CLIENT_SRC:.c=.o)
-
-all :	fclean $(SERVER_SRC_OBJ) $(CLIENT_SRC_OBJ)
-		@$(CC) $(SERVER_SRC) -I minitalk.h -o server
-		@$(CC) $(CLIENT_SRC) -I minitalk.h -o client
-
-bonus:	fclean $(SERVER_BONUS_OBJ) $(CLIENT_BONUS_OBJ)
-		@$(CC) $(SERVER_BONUS_SRC) -I minitalk_bonus.h -o server_bonus
-		@$(CC) $(CLIENT_BONUS_SRC) -I minitalk_bonus.h -o client_bonus
-
-clean :
-	@rm -rf ./src/*.o ./bonus/*.o
+clean: 
+	rm $(SERVER) $(CLIENT)
 
 fclean: clean
-	@rm -rf $(SERVER) $(CLIENT) $(CLIENT_BONUS) $(SERVER_BONUS)
 
-re: fclean all
+re: clean all
 
-.PHONY : bonus all clean fclean
+
+# B_SERVER=server_bonus
+# B_CLIENT=client_bonus
+
+# b_all: b_test
+
+# b_test: b_server b_client
+
+# b_server:
+# 	gcc server_bonus.c utils.c -o $(B_SERVER)
+
+# b_client:
+# 	gcc client_bonus.c utils.c -o $(B_CLIENT)
+
+# b_clean: 
+# 	rm $(B_SERVER) $(B_CLIENT)
+
+# b_fclean: b_clean
+
+# b_re: b_clean b_all
