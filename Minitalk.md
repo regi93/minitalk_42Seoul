@@ -78,7 +78,8 @@ https://www.lesstif.com/system-admin/unix-linux-kill-12943674.html
 * 성공시 0,  실패시 -1리턴
 * 특정 프로세스 뿐 아니라, 같은 PID의 모든 프로세스에서 동시에 시그널을 전송할 수 있다.
 * 시그널의 종류는 터미널에서 `kill -l`
-* ![image-20210911213147246](/Users/yujun-yong/Library/Application Support/typora-user-images/image-20210911213147246.png)
+![image](https://user-images.githubusercontent.com/46234386/133193823-2e275e40-c1f3-43e3-8a0e-569f1615d94f.png)
+
 
 * usleep 왜 필요한거지 .. ?
 * signal 함수를 한번 실행시켜놓으면 계속  유지되는건가 .. .?
@@ -230,7 +231,8 @@ https://jeongdowon.medium.com/unicode%EC%99%80-utf-8-%EA%B0%84%EB%8B%A8%ED%9E%88
 
 
 
-![image-20210913164819121](/Users/yujun-yong/Library/Application Support/typora-user-images/image-20210913164819121.png)
+![image](https://user-images.githubusercontent.com/46234386/133193862-926da224-131b-4049-b3a9-147288539325.png)
+
 
 
 
@@ -250,10 +252,10 @@ https://jeongdowon.medium.com/unicode%EC%99%80-utf-8-%EA%B0%84%EB%8B%A8%ED%9E%88
 
 
 
-https://bingu.tistory.com/m/5 아마도 127에 대한 해답이 여기 있을듯.
+https://bingu.tistory.com/m/5 
 
 
-
+https://www.notion.so/minitalk-Inter-Process-Communication-0b8ee4bb511c465e9a09fe70e00c9f96
 
 
 
